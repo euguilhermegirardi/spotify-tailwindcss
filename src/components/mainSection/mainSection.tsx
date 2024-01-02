@@ -3,6 +3,7 @@ import { data } from '../../utils/data'
 import { shuffleArray } from '../../utils/shuffleArray'
 import Slider from '../slider'
 import MobilePlayer from '../mobilePlayer'
+import Footer from '../footer'
 
 export default function MainSection() {
   const shuffledData = shuffleArray([...data])
@@ -27,9 +28,12 @@ export default function MainSection() {
         <p className="pb-4 text-xl font-bold">Your top mixes...</p>
 
         <Slider data={shuffledData} perView={2.5} spaceBetween={15} />
+        <Slider data={shuffledData} perView={2.5} spaceBetween={15} />
       </div>
 
       <MobilePlayer />
+
+      <Footer />
     </main>
   )
 }
