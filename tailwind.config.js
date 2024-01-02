@@ -12,6 +12,7 @@ export default {
         grey: {
           1: '#535353',
           2: '#b3b3b3',
+          3: '#282838',
         },
       },
       fontFamily: {
