@@ -14,6 +14,9 @@ export default {
           2: '#b3b3b3',
         },
       },
+      fontFamily: {
+        roboto: ['Roboto'],
+      },
     },
   },
   plugins: [],
