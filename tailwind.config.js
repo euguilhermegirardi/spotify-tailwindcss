@@ -6,6 +6,7 @@ export default {
       colors: {
         green: '#1db954',
         black: {
+          0: '#000',
           1: '#212121',
           2: '#121212',
         },
@@ -17,6 +18,10 @@ export default {
       },
       fontFamily: {
         roboto: ['Roboto'],
+      },
+      flex: {
+        2: '2 2 0%',
+        5: '5 5 0%',
       },
     },
   },
