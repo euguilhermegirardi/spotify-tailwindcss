@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        white: {
+          1: '#fff',
+        },
         green: '#1db954',
         black: {
           0: '#000',
@@ -14,6 +17,7 @@ export default {
           1: '#535353',
           2: '#b3b3b3',
           3: '#282838',
+          4: '#2a2a2a',
         },
       },
       fontFamily: {

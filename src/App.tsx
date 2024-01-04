@@ -4,8 +4,8 @@ import Nav from './components/nav'
 
 export default function App() {
   return (
-    <div className="bg-black-0 h-screen overflow-auto font-roboto text-white md:flex md:p-2">
-      <div className="md:flex-2 ">
+    <div className="text-white h-screen overflow-hidden bg-black-0 font-roboto md:flex md:p-2">
+      <div className="hidden md:flex md:flex-2 md:flex-col md:gap-2">
         <Nav />
         <Library />
       </div>
