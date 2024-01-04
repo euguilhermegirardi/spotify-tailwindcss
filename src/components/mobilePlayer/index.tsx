@@ -4,7 +4,7 @@ import ToolSmallImg from '../../assets/tool-small.png'
 
 export default function MobilePlayer() {
   return (
-    <div className="bg-grey-3 w-1full absolute bottom-20 left-2 right-2 z-10 flex flex-col rounded-md px-4 pt-1 md:hidden">
+    <div className="w-1full absolute bottom-20 left-2 right-2 z-10 flex flex-col rounded-md bg-grey-3 px-4 pt-1 md:hidden">
       <div className="flex justify-between">
         <div className="flex gap-4">
           <img
@@ -21,14 +21,14 @@ export default function MobilePlayer() {
           </div>
         </div>
 
-        <div className="flex-2 flex items-center justify-end gap-3">
+        <div className="flex flex-2 items-center justify-end gap-3">
           <Heart />
           <Pause />
         </div>
       </div>
 
       <div className="h-0.5 rounded-full bg-grey-1">
-        <div className="h-0.5 w-3/5 rounded-full bg-white" />
+        <div className="bg-white h-0.5 w-3/5 rounded-full" />
       </div>
     </div>
   )
