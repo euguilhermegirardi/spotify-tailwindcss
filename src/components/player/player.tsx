@@ -13,20 +13,9 @@ import {
   PictureInPicture2,
 } from 'lucide-react'
 import Img from '../../assets/ponto_cego.png'
-import { useState } from 'react'
+import { Icon } from './components/icon'
 
 export default function Player() {
-  const [icons, setIcons] = useState({
-    skipForward: false,
-    repeat: false,
-    playSquare: false,
-    mic2: false,
-    listVideo: false,
-    speaker: false,
-    volume2: false,
-    pictureInPicture2: false,
-  })
-
   return (
     <footer className="hidden p-2 md:flex md:h-auto md:min-w-[620px]">
       <div className="flex h-[72px] items-center justify-between md:w-full">
@@ -62,39 +51,8 @@ export default function Player() {
               </div>
 
               <div className="flex flex-1 items-center gap-5 hover:text-white-1">
-                <SkipForward
-                  onMouseEnter={() =>
-                    setIcons((prevIcons) => ({
-                      ...prevIcons,
-                      skipForward: true,
-                    }))
-                  }
-                  onMouseLeave={() =>
-                    setIcons((prevIcons) => ({
-                      ...prevIcons,
-                      skipForward: false,
-                    }))
-                  }
-                  color={icons.skipForward ? '#fff' : '#b3b3b3'}
-                  fill={icons.skipForward ? '#fff' : '#b3b3b3'}
-                  size={20}
-                />
-                <Repeat2
-                  onMouseEnter={() =>
-                    setIcons((prevIcons) => ({
-                      ...prevIcons,
-                      repeat: true,
-                    }))
-                  }
-                  onMouseLeave={() =>
-                    setIcons((prevIcons) => ({
-                      ...prevIcons,
-                      repeat: false,
-                    }))
-                  }
-                  color={icons.repeat ? '#fff' : '#b3b3b3'}
-                  size={20}
-                />
+                <Icon icon={<SkipForward />} size={20} isFill />
+                <Icon icon={<Repeat2 />} size={20} />
               </div>
             </div>
           </div>
@@ -117,89 +75,11 @@ export default function Player() {
         </div>
 
         <div className="flex w-[30%] min-w-[180px] items-center justify-end gap-2">
-          <PlaySquare
-            size={18}
-            className="hover:cursor-pointer"
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                playSquare: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                playSquare: false,
-              }))
-            }
-            color={icons.playSquare ? '#fff' : '#b3b3b3'}
-          />
-          <Mic2
-            size={18}
-            className="hover:cursor-pointer"
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                mic2: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                mic2: false,
-              }))
-            }
-            color={icons.mic2 ? '#fff' : '#b3b3b3'}
-          />
-          <ListVideo
-            size={18}
-            className="hover:cursor-pointer"
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                listVideo: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                listVideo: false,
-              }))
-            }
-            color={icons.listVideo ? '#fff' : '#b3b3b3'}
-          />
-          <Speaker
-            size={18}
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                speaker: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                speaker: false,
-              }))
-            }
-            color={icons.speaker ? '#fff' : '#b3b3b3'}
-          />
-          <Volume2
-            size={18}
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                volume2: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                volume2: false,
-              }))
-            }
-            color={icons.volume2 ? '#fff' : '#b3b3b3'}
-          />
+          <Icon icon={<PlaySquare />} size={18} isCursorPointer />
+          <Icon icon={<Mic2 />} size={18} isCursorPointer />
+          <Icon icon={<ListVideo />} size={18} isCursorPointer />
+          <Icon icon={<Speaker />} size={18} />
+          <Icon icon={<Volume2 />} size={18} />
 
           <div className="group relative h-1.5 w-28 rounded-full bg-grey-1">
             <div className="relative h-1.5 w-3/4 rounded-full bg-white-1 group-hover:bg-green">
@@ -207,22 +87,7 @@ export default function Player() {
             </div>
           </div>
 
-          <PictureInPicture2
-            size={18}
-            onMouseEnter={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                pictureInPicture2: true,
-              }))
-            }
-            onMouseLeave={() =>
-              setIcons((prevIcons) => ({
-                ...prevIcons,
-                pictureInPicture2: false,
-              }))
-            }
-            color={icons.pictureInPicture2 ? '#fff' : '#b3b3b3'}
-          />
+          <Icon icon={<PictureInPicture2 />} size={18} />
         </div>
       </div>
     </footer>
