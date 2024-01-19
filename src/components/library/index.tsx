@@ -16,16 +16,13 @@ export default function Library() {
       searchRef.current &&
       !searchRef.current.contains(event.target as Node)
     ) {
-      // Click outside the search component, close the search box
       setIsSearchVisible(false)
     }
   }
 
   useEffect(() => {
-    // Add click event listener on mount
     document.addEventListener('click', handleOutsideClick)
 
-    // Remove the event listener on component unmount
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
