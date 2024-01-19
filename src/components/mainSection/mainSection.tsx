@@ -60,7 +60,9 @@ export default function MainSection() {
             />
           </div>
 
-          <StickyHeader />
+          <div className="hidden md:block">
+            <StickyHeader />
+          </div>
 
           <div className="hidden md:flex md:w-full md:flex-col md:gap-2 md:px-2 md:py-0">
             <div className="mt-3 flex flex-col">
