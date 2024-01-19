@@ -1,9 +1,18 @@
+import { useMediaQuery } from 'react-responsive'
 import { Play } from 'lucide-react'
 import { jumpBackInData, DataProps } from '../../../../utils/data'
-import { shuffleArray } from '../../../../utils/shuffleArray'
 
 export function MainCardsSection({ title }: { title: string }) {
-  const shuffledData = shuffleArray([...jumpBackInData])
+  const isLargeScreen = useMediaQuery({ minWidth: 1344 })
+  const isMediumScreen = useMediaQuery({ minWidth: 1030, maxWidth: 1343 })
+  const isSmallerScreen = useMediaQuery({ minWidth: 800, maxWidth: 1029 })
+  const itemsToShow = isLargeScreen
+    ? 5
+    : isMediumScreen
+      ? 4
+      : isSmallerScreen
+        ? 3
+        : jumpBackInData.length
 
   return (
     <div className="mt-4 flex w-full flex-col gap-3">
@@ -13,8 +22,9 @@ export function MainCardsSection({ title }: { title: string }) {
           Show all
         </small>
       </div>
+
       <div className="flex w-full items-center justify-between gap-2">
-        {shuffledData.map((each: DataProps) => (
+        {jumpBackInData.slice(0, itemsToShow).map((each: DataProps) => (
           <div
             className="group relative flex h-[252px] w-[170px] flex-col justify-start rounded-md bg-slate-800 bg-opacity-30 p-3 transition-all duration-500 hover:cursor-pointer hover:bg-opacity-70"
             key={each.id}

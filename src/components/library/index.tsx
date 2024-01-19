@@ -53,7 +53,7 @@ export default function Library() {
       </div>
 
       <div className="scrollbar-gutter flex flex-col overflow-hidden py-3 hover:overflow-y-auto">
-        <div className="flex items-center justify-between pb-3 pr-[0.40rem]">
+        <div className="flex items-center justify-between pb-3 pr-[0.45rem]">
           <div
             ref={searchRef}
             className={`relative h-10 ${
@@ -88,10 +88,13 @@ export default function Library() {
           </div>
 
           <div className="flex cursor-pointer gap-3 transition-transform duration-300 hover:scale-105 hover:text-white-1">
-            <span className="group-hover:scale-100 group-hover:transform">
+            <span className="text-sm group-hover:scale-100 group-hover:transform">
               Recents
             </span>
-            <ListMusic className="group-hover:scale-y-[-1] group-hover:transform" />
+            <ListMusic
+              className="group-hover:scale-y-[-1] group-hover:transform"
+              size={20}
+            />
           </div>
         </div>
 
