@@ -29,7 +29,7 @@ export default function Slider({
             src={each.image}
             alt={each.title}
           />
-          <p>{each.title}</p>
+          <p className="text-white-1">{each.title}</p>
         </SwiperSlide>
       ))}
     </Swiper>

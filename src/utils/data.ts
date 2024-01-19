@@ -109,3 +109,98 @@ export const data: DataProps[] = [
     type: 'Artist',
   },
 ]
+
+export const recentlyData: DataProps[] = [
+  {
+    id: 1,
+    title: 'Pearl Jam',
+    subtitle: '',
+    creator: '',
+    image: Vitalogy,
+    type: 'Artist',
+  },
+  {
+    id: 2,
+    title: 'Pearl Jam',
+    subtitle: 'Avocado',
+    creator: 'Guilherme G.',
+    image: Avocado,
+    type: 'Album',
+  },
+  {
+    id: 3,
+    title: 'Pense',
+    subtitle: 'Realidade, Vida e Fe',
+    creator: 'Girardi',
+    image: Pense,
+    type: 'Album',
+  },
+  {
+    id: 4,
+    title: 'Led Zeppelin',
+    subtitle: '',
+    creator: '',
+    image: LedZeppelin,
+    type: 'Artist',
+  },
+  {
+    id: 5,
+    title: 'Kendrick Lamar',
+    subtitle: '',
+    creator: '',
+    image: KendrickLamar,
+    type: 'Artist',
+  },
+  {
+    id: 6,
+    title: 'Dead Fish',
+    subtitle: 'Ponto Cego',
+    creator: 'Gira',
+    image: PontoCego,
+    type: 'Album',
+  },
+]
+
+export const jumpBackInData: DataProps[] = [
+  {
+    id: 1,
+    title: 'Daily Mix 1',
+    subtitle: 'Pense, Dead Fish, Bad Religion, Rancore, Ratos de Porao',
+    creator: '',
+    image: Daily1,
+    type: 'Mix',
+  },
+  {
+    id: 2,
+    title: 'Daily Mix 2',
+    subtitle: 'Led Zeppelin, The Doors, Pink Floyd',
+    creator: 'Guilherme G.',
+    image: Daily2,
+    type: 'Mix',
+  },
+  {
+    id: 3,
+    title: 'Daily Mix 3',
+    subtitle: 'Capital Inicial, CPM 22, Black Alien, Planet Hemp',
+    creator: 'Girardi',
+    image: Daily3,
+    type: 'Mix',
+  },
+  {
+    id: 4,
+    title: 'Daily Mix 4',
+    subtitle:
+      'TOOL, Radiohead, The Strokes, Black Sabbath, Red Hot Chilli Peppers',
+    creator: 'Kai-Kai',
+    image: Daily4,
+    type: 'Mix',
+  },
+  {
+    id: 5,
+    title: 'Daily Mix 5',
+    subtitle: 'Dua Lipa, Rihanna, Anitta, Rebelde',
+    creator: 'Raxixa',
+    image: Daily5,
+    type: 'Mix',
+  },
+]

@@ -14,7 +14,7 @@ export default function MobilePlayer() {
           />
 
           <div className="item-center flex flex-col justify-center">
-            <p className="text-sm font-bold">The Pot - Tool</p>
+            <p className="text-sm font-bold text-white-1">The Pot - Tool</p>
             <span className="flex items-center justify-items-center gap-1 text-sm font-light text-green">
               <PlayCircle size={15} /> GUILHERME'S MACBOOK PRO
             </span>
@@ -22,8 +22,8 @@ export default function MobilePlayer() {
         </div>
 
         <div className="flex flex-2 items-center justify-end gap-3">
-          <Heart />
-          <Pause />
+          <Heart color="white" />
+          <Pause color="white" />
         </div>
       </div>
 
