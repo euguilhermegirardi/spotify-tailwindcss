@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Settings, Play } from 'lucide-react'
-import { DataProps, data, jumpBackInData, recentlyData } from '../../utils/data'
+import { DataProps, data, recentlyData } from '../../utils/data'
 import { shuffleArray } from '../../utils/shuffleArray'
 import MobileSlider from '../mobileSlider'
 import MobilePlayer from '../mobilePlayer'
 import MobileFooter from '../mobileFooter'
 import StickyHeader from './components/stickyHeader'
+import { MainCardsSection } from './components/mainCardsSection'
+import '../../index.css'
 
 export default function MainSection() {
   const [currentHoveredIndex, setCurrentHoveredIndex] = useState<number | null>(
@@ -43,7 +45,7 @@ export default function MainSection() {
     <main
       className={`relative flex h-screen w-full flex-col rounded-md ${getGradientClass()} p-4 md:flex-5 md:py-0 md:pt-4`}
     >
-      <div className="flex h-screen flex-col overflow-auto pb-32">
+      <div className="scrollbar-gutter flex h-screen flex-col overflow-hidden pb-32 hover:overflow-y-auto">
         <div className="flex flex-col justify-between">
           <div className="flex w-full items-center justify-between md:hidden">
             <h1 className="text-3xl font-semibold text-white-1">
@@ -94,61 +96,10 @@ export default function MainSection() {
               </div>
             </div>
 
-            <div className="mt-4 flex w-full flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <p className="text-xl font-semibold text-white-1">
-                  Jump back in
-                </p>
-                <small className="font-semibold text-gray-300 hover:cursor-pointer hover:underline">
-                  Show all
-                </small>
-              </div>
-              <div className="flex w-full items-center justify-between gap-2">
-                {jumpBackInData.map((each: DataProps) => (
-                  <div
-                    className="group relative flex h-[252px] w-[170px] flex-col justify-start rounded-md bg-slate-800 bg-opacity-30 p-3 transition-all duration-500 hover:cursor-pointer hover:bg-opacity-70"
-                    key={each.id}
-                  >
-                    <img
-                      className="h-36 w-36 self-center rounded-md"
-                      src={each.image}
-                      alt={each.title}
-                    />
-
-                    <div className="absolute right-3 top-28 mr-2 hidden transform rounded-full bg-green p-2 transition-transform hover:scale-110 hover:cursor-pointer group-hover:block group-hover:shadow-3xl">
-                      <Play fill="black" size={20} className="pl-[3px] " />
-                    </div>
-
-                    <span className="mt-3 text-start font-bold text-white-1">
-                      {each.title}
-                    </span>
-                    <small className="mt-1 line-clamp-2 overflow-hidden text-start font-semibold text-gray-500">
-                      {each.subtitle}
-                    </small>
-                  </div>
-                ))}
-              </div>
-              <div className="flex w-full items-center justify-between gap-2">
-                {jumpBackInData.map((each: DataProps) => (
-                  <div
-                    className="flex h-[252px] w-[170px] flex-col justify-start rounded-md bg-slate-800 bg-opacity-30 p-3 transition-all duration-500 hover:cursor-pointer hover:bg-opacity-70"
-                    key={each.id}
-                  >
-                    <img
-                      className="h-36 w-36 self-center rounded-md"
-                      src={each.image}
-                      alt={each.title}
-                    />
-                    <span className="mt-3 text-start font-bold text-white-1">
-                      {each.title}
-                    </span>
-                    <small className="mt-1 line-clamp-2 overflow-hidden text-start font-semibold text-gray-500">
-                      {each.subtitle}
-                    </small>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <MainCardsSection title={'Your top mixes'} />
+            <MainCardsSection title={'Jump back in'} />
+            <MainCardsSection title={'Recently played'} />
+            <MainCardsSection title={'Trowback'} />
           </div>
         </div>
 

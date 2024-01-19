@@ -13,7 +13,6 @@ export default function StickyHeader() {
 
     window.addEventListener('scroll', handleScroll)
 
-    // Cleanup event listener
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }

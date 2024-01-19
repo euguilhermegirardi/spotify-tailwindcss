@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { LibraryBig, Plus, ArrowRight, Search, ListMusic } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { DataProps, data } from '../../utils/data'
+import '../../index.css'
 
 export default function Library() {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
@@ -29,8 +30,8 @@ export default function Library() {
   }, [])
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-md bg-black-2 px-3 py-5 text-grey-2">
-      <div className="flex w-[360px] justify-between">
+    <div className="flex flex-col overflow-hidden rounded-md bg-black-2 px-3 pt-5 text-grey-2">
+      <div className="flex justify-between">
         <div className="flex cursor-pointer space-x-2 hover:text-white-1">
           <LibraryBig />
           <p>Your Library</p>
@@ -42,7 +43,7 @@ export default function Library() {
         </div>
       </div>
 
-      <div className="flex w-[360px] gap-2 space-x-1 pb-2 pt-4">
+      <div className="flex gap-2 space-x-1 pb-2 pt-4">
         <p className="cursor-pointer self-center rounded-full bg-grey-4 px-2 py-1 text-center text-sm text-grey-2 transition delay-150 ease-in-out hover:bg-black-1">
           Playlists
         </p>
@@ -51,8 +52,8 @@ export default function Library() {
         </p>
       </div>
 
-      <div className="flex flex-col py-3 hover:overflow-y-auto hover:overflow-x-hidden">
-        <div className="flex w-[360px] items-center justify-between pb-3">
+      <div className="scrollbar-gutter flex flex-col overflow-hidden py-3 hover:overflow-y-auto">
+        <div className="flex items-center justify-between pb-3 pr-[0.40rem]">
           <div
             ref={searchRef}
             className={`relative h-10 ${
