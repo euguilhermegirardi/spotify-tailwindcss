@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default scrollbar styles */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -18,4 +19,15 @@
 /* Optional: Hover styles */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a7a7a7;
+}
+
+/* Media query to hide scrollbar on mobile devices */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 }
