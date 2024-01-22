@@ -87,16 +87,13 @@ export default function MainSection() {
             dynamicBg={getGradientClass()}
           />
 
-          <div className="hidden md:flex md:w-full md:flex-col md:gap-2">
-            <div className="mt-3 flex flex-col">
+          <div className="hidden md:flex md:w-full md:flex-col md:gap-2 md:last:mb-32">
+            <div className="mx-[1.8rem] mt-20 flex flex-col">
               <h1 className="text-3xl font-semibold text-white-1">
                 Good morning
               </h1>
 
-              <div
-                className="mt-2 grid grid-cols-3 grid-rows-2 gap-2"
-                onScroll={handleScroll}
-              >
+              <div className="mt-2 grid grid-cols-3 grid-rows-2 gap-2">
                 {recentlyData.map((album: DataProps) => (
                   <div
                     key={album.id}

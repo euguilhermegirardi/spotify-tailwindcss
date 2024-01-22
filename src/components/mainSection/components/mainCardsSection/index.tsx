@@ -15,7 +15,7 @@ export function MainCardsSection({ title }: { title: string }) {
         : jumpBackInData.length
 
   return (
-    <div className="mt-4 flex w-full flex-col gap-3">
+    <div className="mx-[1.8rem] mt-4 flex w-auto flex-col gap-3">
       <div className="flex items-center justify-between">
         <p className="text-xl font-semibold text-white-1">{title}</p>
         <small className="font-semibold text-gray-300 hover:cursor-pointer hover:underline">
