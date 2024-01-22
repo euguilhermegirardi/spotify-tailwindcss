@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      screens: {
+        mdToLg: { max: '1130px' },
+      },
       colors: {
         white: {
           1: '#fff',

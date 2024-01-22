@@ -34,12 +34,12 @@ export default function StickyHeader() {
       </div>
 
       <div className="flex gap-2">
-        <div className="flex items-center justify-center rounded-full bg-white-1 px-4 transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+        <div className="mdToLg:hidden flex items-center justify-center rounded-full bg-white-1 px-4 transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
           <span className="text-black text-sm font-bold group-hover:transform">
             Explorer Premium
           </span>
         </div>
-        <div className="flex items-center justify-center gap-2 rounded-full bg-slate-800 bg-opacity-30 px-4 transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
+        <div className="mdToLg:hidden flex items-center justify-center gap-2 rounded-full bg-slate-800 bg-opacity-30 px-4 transition-transform duration-300 hover:scale-105 hover:cursor-pointer">
           <div className="flex items-center justify-center rounded-full border p-1">
             <ArrowDownToLine
               className="group-hover:transform"
