@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Settings, Play } from 'lucide-react'
 import { DataProps, data, recentlyData } from '../../utils/data'
 import { shuffleArray } from '../../utils/shuffleArray'
@@ -41,11 +41,33 @@ export default function MainSection() {
     setCurrentHoveredIndex(index)
   }
 
+  const [scrollTop, setScrollTop] = useState<number>(0)
+  const [scrolledDown, setScrolledDown] = useState<boolean>(false)
+
+  const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const newScrollTop = event.currentTarget.scrollTop
+    setScrollTop(newScrollTop)
+  }
+
+  useEffect(() => {
+    if (scrollTop > 50) {
+      setScrolledDown(true)
+    }
+
+    if (scrollTop <= 50) {
+      setScrolledDown(false)
+    }
+  }, [scrollTop])
+
   return (
     <main
-      className={`relative flex h-screen w-full flex-col rounded-md ${getGradientClass()} p-4 md:flex-5 md:py-0 md:pt-4`}
+      onScroll={handleScroll}
+      className={`relative flex h-screen w-full flex-col rounded-md ${getGradientClass()} p-4 md:flex-5 md:p-0`}
     >
-      <div className="scrollbar-gutter flex h-screen flex-col overflow-hidden pb-32 hover:overflow-y-auto">
+      <div
+        onScroll={handleScroll}
+        className="scrollbar-gutter flex h-screen flex-col overflow-hidden pb-32 pt-1 hover:overflow-y-auto md:p-0"
+      >
         <div className="flex flex-col justify-between">
           <div className="flex w-full items-center justify-between md:hidden">
             <h1 className="text-3xl font-semibold text-white-1">
@@ -60,17 +82,21 @@ export default function MainSection() {
             />
           </div>
 
-          <div className="hidden md:block">
-            <StickyHeader />
-          </div>
+          <StickyHeader
+            isScrolled={scrolledDown}
+            dynamicBg={getGradientClass()}
+          />
 
-          <div className="hidden md:flex md:w-full md:flex-col md:gap-2 md:px-2 md:py-0">
+          <div className="hidden md:flex md:w-full md:flex-col md:gap-2">
             <div className="mt-3 flex flex-col">
               <h1 className="text-3xl font-semibold text-white-1">
                 Good morning
               </h1>
 
-              <div className="mt-2 grid grid-cols-3 grid-rows-2 gap-2">
+              <div
+                className="mt-2 grid grid-cols-3 grid-rows-2 gap-2"
+                onScroll={handleScroll}
+              >
                 {recentlyData.map((album: DataProps) => (
                   <div
                     key={album.id}

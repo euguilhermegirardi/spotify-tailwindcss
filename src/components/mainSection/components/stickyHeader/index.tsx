@@ -1,28 +1,18 @@
 import { ChevronLeft, ChevronRight, ArrowDownToLine, Bell } from 'lucide-react'
 import Avatar from '../../../../assets/avatar.png'
-import { useState, useEffect } from 'react'
 
-export default function StickyHeader() {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 0)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
+export default function StickyHeader({
+  isScrolled,
+  dynamicBg,
+}: {
+  isScrolled: boolean
+  dynamicBg: string | undefined
+}) {
   return (
     <div
       className={`${
-        isScrolled ? 'bg-slate-950' : ''
-      } sticky left-0 right-0 top-0 z-50 mb-4 mt-1 flex h-8 w-full items-center justify-between`}
+        isScrolled ? `${dynamicBg} rounded-tl-md rounded-tr-md` : ''
+      } left-0 right-0 top-0 z-50 hidden h-8 w-full items-center justify-between md:absolute md:flex md:p-9`}
     >
       <div className="flex gap-4">
         <div className="flex h-9 w-9 cursor-pointer items-center rounded-full bg-slate-900 bg-opacity-80 p-2">
