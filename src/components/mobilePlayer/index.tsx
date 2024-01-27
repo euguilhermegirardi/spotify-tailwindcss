@@ -1,5 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
-import { PlayCircle, Heart, Pause } from 'lucide-react'
+import { Heart, Pause, PlayCircle } from 'lucide-react'
 import ToolSmallImg from '../../assets/tool-small.png'
 
 export default function MobilePlayer() {
@@ -16,7 +15,7 @@ export default function MobilePlayer() {
           <div className="item-center flex flex-col justify-center">
             <p className="text-sm font-bold text-white-1">The Pot - Tool</p>
             <span className="flex items-center justify-items-center gap-1 text-sm font-light text-green">
-              <PlayCircle size={15} /> GUILHERME'S MACBOOK PRO
+              <PlayCircle size={15} /> GUILHERME MACBOOK PRO
             </span>
           </div>
         </div>
